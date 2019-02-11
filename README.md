@@ -4,7 +4,7 @@ This project was generated with Angular version 6.1.2.
 
 ## Page View:
 
-![Alt text](assets/images/final_view.png?raw=true,"View")
+![Alt text](src/assets/images/final_view.png?raw=true,"View")
 
 ## Development server
 
