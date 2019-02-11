@@ -2,6 +2,10 @@
 
 This project was generated with Angular version 6.1.2.
 
+## Page View:
+
+![Alt text](assets/images/final_view.png?raw=true,"View")
+
 ## Development server
 
 Run `npm install` to install all the dependencies specified in the package.json
