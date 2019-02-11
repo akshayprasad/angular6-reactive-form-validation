@@ -4,6 +4,8 @@ This project was generated with Angular version 6.1.2.
 
 ## Development server
 
+Run `npm install` to install all the dependencies specified in the package.json
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:5200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
