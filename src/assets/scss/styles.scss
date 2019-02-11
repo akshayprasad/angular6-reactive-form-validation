@@ -1,0 +1,17 @@
+@import 'variables';
+
+.header {
+    height: $header-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $cwt-theme-color;
+
+    .header-pane {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 985px;
+        box-sizing: content-box;
+        text-align: center;
+    }
+}
