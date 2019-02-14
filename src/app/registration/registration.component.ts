@@ -2,19 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MustMatch } from './must-match.validator';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { BaseComponent } from '../core/framework/base.component';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent extends BaseComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted = false;
 
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, _translateService: TranslateService) {
+    super(router, _translateService);
+  }
 
   ngOnInit() {
     this.registerTheForm();

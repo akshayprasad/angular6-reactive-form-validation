@@ -1,5 +1,5 @@
 {
-    "Loginuser": "Login User",
+    "LoginuserAdmin": "Login [User/Admin]",
     "Email": "Email",
     "Password": "Password",
     "Confirmpassword": "Confirm Password",
