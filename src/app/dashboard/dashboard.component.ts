@@ -46,6 +46,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
     this.submitted = true;
+    const records = JSON.parse(localStorage.getItem('user-records')) || [];
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
@@ -53,7 +54,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     }
 
     console.log(this.registerForm.value);
+    // Localstorage Integration
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+    records.push(this.registerForm.value);
+    localStorage.setItem('user-records', JSON.stringify(records));
+    // Localstorage Integration ends
     this.registerTheForm();
   }
 }

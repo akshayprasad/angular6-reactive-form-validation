@@ -1,8 +1,8 @@
 <div>
-  <div *ngIf="controlErrors" class="invalid-feedback"> <!-- validate error-tooltip-wrap -->
-    <div *ngIf="displayError?.required">{{errorMsg?.required}}</div> <!-- error-tooltip -->
-    <div *ngIf="displayError?.email">{{errorMsg?.email}}</div> <!-- error-tooltip -->
-    <div *ngIf="displayError?.minlength">{{errorMsg?.minlength}}</div> <!-- error-tooltip -->
-    <div *ngIf="displayError?.mustMatch">{{errorMsg?.mustMatch}}</div> <!-- error-tooltip -->
+  <div *ngIf="controlErrors" class="invalid-feedback validate error-tooltip-wrap"> <!-- validate error-tooltip-wrap -->
+    <div *ngIf="displayError?.required" class="error-tooltip">{{errorMsg?.required}}</div> <!-- error-tooltip -->
+    <div *ngIf="displayError?.email" class="error-tooltip">{{errorMsg?.email}}</div> <!-- error-tooltip -->
+    <div *ngIf="displayError?.minlength" class="error-tooltip">{{errorMsg?.minlength}}</div> <!-- error-tooltip -->
+    <div *ngIf="displayError?.mustMatch" class="error-tooltip">{{errorMsg?.mustMatch}}</div> <!-- error-tooltip -->
   </div>
 </div>

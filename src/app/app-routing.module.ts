@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-
+import { NotFoundComponent } from './shared';
 const routes: Routes = [
     {
         path: '',
@@ -17,10 +17,14 @@ const routes: Routes = [
             }
         ]
     },
-    // {
-    //     path: '**',
-    //     redirectTo: ''
-    // }
+    {
+        path: '**',
+        redirectTo: '/404'
+    },
+    {
+        path: '404',
+        component: NotFoundComponent
+    },
 ];
 
 @NgModule({
