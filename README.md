@@ -4,8 +4,10 @@ This project was generated with Angular version 6.1.2.
 
 ## Pages View:
 
+<br/><br/>
 ![Alt text](src/assets/images/login.png?raw=true,"View")
 
+<br/><br/>
 ![Alt text](src/assets/images/registration.png?raw=true,"View")
 
 ![Alt text](src/assets/images/registration-error.png?raw=true,"View")
