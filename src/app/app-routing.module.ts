@@ -1,21 +1,30 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './shared';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 const routes: Routes = [
     {
         path: '',
         children: [
             {
                 path: '',
-                redirectTo: 'dashboard',
+                redirectTo: 'login',
                 pathMatch: 'full'
             },
-
+            {
+                path: 'login',
+                component: LoginComponent
+            },
             {
                 path: 'dashboard',
                 loadChildren: './dashboard/dashboard.module#DashboardModule'
             }
         ]
+    },
+    {
+        path: 'registration',
+        component: RegistrationComponent
     },
     {
         path: '**',

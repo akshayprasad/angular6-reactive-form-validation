@@ -1,0 +1,51 @@
+<section id="provision" #provision>
+    <div class="">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 offset-md-3">
+                  <h3 class="text-align-center text-info-custom pt-5">Registration Form</h3>
+                  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                      <div class="form-group position-relative">
+                          <label class="text-info-custom">First Name</label>
+                          <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                            <app-field-error-display [controlErrors]="f.firstName.errors" [displayError]="submitted && f.firstName.errors" [errorMsg]="{'required': 'First Name is required'}">
+                            </app-field-error-display>
+                      </div>
+                      <div class="form-group position-relative">
+                          <label class="text-info-custom">Last Name</label>
+                          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                          <app-field-error-display [controlErrors]="f.lastName.errors" [displayError]="submitted && f.lastName.errors" [errorMsg]="{'required': 'Last Name is required'}">
+                            </app-field-error-display>
+                      </div>
+                      <div class="form-group position-relative">
+                          <label class="text-info-custom">Email</label>
+                          <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                          <app-field-error-display  [controlErrors]="f.email.errors" [displayError]="submitted && f.email.errors" [errorMsg]="{'required': 'Email is required', 'email': 'Email must be a valid email address'}">
+                            </app-field-error-display>
+                      </div>
+                      <div class="form-group position-relative">
+                          <label class="text-info-custom">Password</label>
+                          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                          <app-field-error-display  [controlErrors]="f.password.errors" [displayError]="submitted && f.password.errors" [errorMsg]="{'required': 'Password is required', 'minlength': 'Password must be at least 6 characters'}">
+                            </app-field-error-display>
+                      </div>
+                      <div class="form-group position-relative">
+                          <label class="text-info-custom">Confirm Password</label>
+                          <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                          <app-field-error-display  [controlErrors]="f.confirmPassword.errors" [displayError]="submitted && f.confirmPassword.errors" [errorMsg]="{'required': 'Password is required', 'mustMatch': 'Passwords must match'}">
+                            </app-field-error-display>
+                      </div>
+                      <div class="form-group">
+                          <button class="btn btn-primary btn-custom">Register</button>
+                      </div>
+
+                      <div id="register-link" class="text-right">
+                          <a [routerLink]="['/login']" class="text-info-custom">Back to Login</a>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  </section>
