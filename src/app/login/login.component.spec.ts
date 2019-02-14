@@ -4,6 +4,8 @@ import { LoginComponent } from './login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FieldErrorDisplayComponent } from '../shared';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -11,7 +13,7 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ ReactiveFormsModule, RouterTestingModule ],
+      imports: [ ReactiveFormsModule, RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
       declarations: [ LoginComponent, FieldErrorDisplayComponent ]
     })
     .compileComponents();

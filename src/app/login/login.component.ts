@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { BaseComponent } from '../core/framework/base.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends BaseComponent implements OnInit {
 
   loginForm: any;
   submitted: boolean;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, _translateService: TranslateService, _router: Router) {
+    super(_router, _translateService);
+  }
 
   ngOnInit() {
     this.loginUser();
