@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
     declarations: [DashboardComponent],
@@ -14,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
         FormsModule,
         ReactiveFormsModule,
         NgbModule,
+        AngularFontAwesomeModule,
         DashboardRoutingModule
     ],
     exports: []

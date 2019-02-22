@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { BaseComponent } from '../core/framework/base.component';
@@ -11,8 +11,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent extends BaseComponent implements OnInit {
 
+  @ViewChild('alerterror') alerterror: ElementRef;
+
   loginForm: any;
   submitted: boolean;
+  invalidCredentials = false;
   constructor(private formBuilder: FormBuilder, _translateService: TranslateService, _router: Router) {
     super(_router, _translateService);
   }
@@ -44,10 +47,9 @@ export class LoginComponent extends BaseComponent implements OnInit {
     const loginForm = this.loginForm.value;
     if (loginForm.email === 'admin@gmail.com' && loginForm.password === 'Admin@123') {
       this._router.navigate(['/dashboard']);
+    } else {
+      this.invalidCredentials = true;
     }
-
-    console.log(this.loginForm.value);
-
     this.loginUser();
   }
 
