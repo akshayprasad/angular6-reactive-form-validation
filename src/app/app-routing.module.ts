@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './shared';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { RoleGuardService } from './guards/role-guard.service';
 const routes: Routes = [
     {
         path: '',
@@ -41,7 +42,8 @@ const routes: Routes = [
         RouterModule.forRoot(routes, { enableTracing: true })
     ],
 
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [RoleGuardService]
 })
 
 export class AppRoutingModule {}

@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
+import { RoleGuardService } from '../guards/role-guard.service';
 
 const routes: Routes = [
     {
@@ -19,7 +20,8 @@ const routes: Routes = [
         RouterModule.forChild(routes)
     ],
 
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [RoleGuardService]
 })
 
 export class DashboardRoutingModule {}
