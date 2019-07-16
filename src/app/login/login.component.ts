@@ -46,9 +46,22 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
     const loginForm = this.loginForm.value;
     if (loginForm.email === 'admin@gmail.com' && loginForm.password === 'Admin@123') {
+      localStorage.setItem('profile-info', JSON.stringify({userName: 'Admin'}));
       this._router.navigate(['/dashboard']);
     } else {
       this.invalidCredentials = true;
+      const userRecords: any[] = JSON.parse(localStorage.getItem('user-records'));
+      userRecords.every((user: any) => {
+        if (user.email === loginForm.email && user.password === loginForm.password) {
+          this.invalidCredentials = false;
+          user.userName = user.firstName + ' ' + user.lastName;
+          localStorage.setItem('profile-info', JSON.stringify(user));
+          this._router.navigate(['/dashboard']);
+          return false;
+        } else {
+          return true;
+        }
+      });
     }
     this.loginUser();
   }

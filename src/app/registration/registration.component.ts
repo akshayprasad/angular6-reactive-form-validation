@@ -55,7 +55,7 @@ export class RegistrationComponent extends BaseComponent implements OnInit {
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
     this.router.navigate(['/login']);
     records.push(this.registerForm.value);
-    localStorage.setItem('user-records', JSON.stringify(records));
+    localStorage.setItem('user-records' , JSON.stringify(records));
     // Localstorage Integration ends
     this.registerTheForm();
   }

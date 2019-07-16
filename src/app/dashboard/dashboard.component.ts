@@ -7,8 +7,11 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  profileInfo!: any;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.profileInfo = JSON.parse(localStorage.getItem('profile-info'));
+  }
 }
